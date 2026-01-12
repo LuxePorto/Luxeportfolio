@@ -151,15 +151,18 @@ const Navbar: React.FC<{ theme: ThemeVariation; toggleTheme: () => void; onNavig
   }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const id = href.replace('#', '');
-    if (isDetailView && onBack) {
-      onBack();
-      setTimeout(() => onNavigate(id), 20);
-    } else {
-      onNavigate(id);
+    // Only intercept navigation links (starting with #), let external links work normally
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const id = href.replace('#', '');
+      if (isDetailView && onBack) {
+        onBack();
+        setTimeout(() => onNavigate(id), 20);
+      } else {
+        onNavigate(id);
+      }
+      setIsOpen(false);
     }
-    setIsOpen(false);
   };
 
   const isDark = theme === ThemeVariation.DARK_NEON;
@@ -524,8 +527,8 @@ const Projects: React.FC<{ reveal: (el: HTMLElement | null) => void; onProjectCl
                 role="button"
                 tabIndex={0}
                 className="group cursor-pointer flex flex-col items-start lg:items-end p-2 rounded-2xl outline-none focus-visible:ring-4 focus-visible:ring-neon-cyan" 
-                onClick={() => window.open('https://github.com', '_blank')}
-                onKeyDown={(e) => e.key === 'Enter' && window.open('https://github.com', '_blank')}
+                onClick={() => window.open('https://github.com/Junaid12337012', '_blank')}
+                onKeyDown={(e) => e.key === 'Enter' && window.open('https://github.com/Junaid12337012', '_blank')}
                 aria-label="Visit Global GitHub Repository"
               >
                  <div className="flex items-center space-x-4 sm:space-x-6 mb-4">
@@ -595,7 +598,7 @@ const Projects: React.FC<{ reveal: (el: HTMLElement | null) => void; onProjectCl
               </div>
               <div className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.5em] hidden lg:block opacity-40">Industrial Grade Codebase</div>
               <button 
-                onClick={() => window.open('https://github.com', '_blank')} 
+                onClick={() => window.open('https://github.com/Junaid12337012', '_blank')} 
                 className="w-full sm:w-auto px-10 py-4 bg-neon-cyan text-black rounded-xl font-bold uppercase text-[10px] sm:text-xs tracking-widest hover:scale-105 active:scale-95 transition-all shadow-2xl focus-visible:ring-4 focus-visible:ring-white"
               >
                  Sync Repository

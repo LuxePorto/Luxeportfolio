@@ -31,59 +31,68 @@ export const NAV_LINKS = [
 ];
 
 export const PROJECTS: Project[] = [
-  {
+ {
     id: 1,
-    title: "Quantum Nexus",
+    title: "Inkwell Bloging site",
     description: "Next-gen visualization platform for complex multi-dimensional datasets with real-time analytics.",
     tags: ["React", "Three.js", "D3.js", "WebGL"],
-    image: "https://picsum.photos/seed/project1/800/600",
+    image: "./inkwell.PNG",
     github: "#",
-    live: "#"
+    live: "https://inkwell-modern-blogging-platform.netlify.app"
   },
   {
     id: 2,
-    title: "Linear Flow",
-    description: "Collaborative task management suite built for high-performance engineering teams.",
+    title: "aurum-ember",
+    description: "A sanctuary of culinary artistry where tradition meets modern innovation. Experience the alchemy of flavor.",
     tags: ["TypeScript", "NestJS", "PostgreSQL", "Tailwind"],
-    image: "https://picsum.photos/seed/project2/800/600",
+    image: "arum & aumber.PNG",
     github: "#",
-    live: "#"
+    live: "https://aurum-ember.netlify.app"
   },
   {
     id: 3,
-    title: "Stripe-Level Gateway",
-    description: "High-security payment processing middleware with 99.9% uptime and low latency.",
+    title: "PIXELNOVA",
+    description: "Forging immersive digital experiences at the intersection of aesthetic precision and engineering performance.",
     tags: ["Go", "Kubernetes", "Redis", "gRPC"],
-    image: "https://picsum.photos/seed/project3/800/600",
+    image: "pixel nova.PNG",
     github: "#",
-    live: "#"
+    live: "https://pixelnova-digital.netlify.app"
   },
-  {
+  { 
     id: 4,
-    title: "Aura AI Chat",
-    description: "A beautifully crafted AI conversational interface using the latest LLM models.",
+    title: " Novaa-studio",
+    description: "We craft data-driven social media strategies that build communities, drive engagement, and deliver measurable results for your brand.",
     tags: ["React", "Gemini API", "Edge Functions"],
-    image: "https://picsum.photos/seed/project4/800/600",
+    image: "nova studio.PNG",
     github: "#",
-    live: "#"
+    live: "https://novaa-studio.netlify.app"
   },
   {
     id: 5,
-    title: "EcoSphere Dashboard",
-    description: "Real-time environmental monitoring dashboard for smart cities and IoT devices.",
+    title: "Cloudrestorestaurant",
+    description: "Get AI-driven analysis on your restaurant's performance to identify trends, popular items, and opportunities for growth.",
     tags: ["React Native", "MQTT", "AWS", "Charts.js"],
-    image: "https://picsum.photos/seed/project5/800/600",
+    image: "cloud resto.PNG",
     github: "#",
-    live: "#"
+    live: "https://cloudrestorestaurant.netlify.app"
   },
   {
     id: 6,
-    title: "Forge Editor",
-    description: "A browser-based low-code editor for creating responsive UI components in real-time.",
+    title: "Aether-digital",
+    description: "Aether is an ultra-premium digital agency crafting award-winning websites, apps, and brand identities for the world's most ambitious companies.",
     tags: ["React", "Monaco", "WebContainers"],
-    image: "https://picsum.photos/seed/project6/800/600",
+    image: "Aether.PNG",
     github: "#",
-    live: "#"
+    live: "https://aether-digital.netlify.app"
+  },
+   {
+    id: 8,
+    title: "Lumina Festival",
+    description: "Lumina isn't just a festival; it's a sensory expedition. We fuse cutting-edge audio technology with generative art to create a living, breathing ecosystem of sound.",
+    tags: ["React", "Monaco", "WebContainers"],
+    image: "luminafestival.PNG",
+    github: "#",
+    live: "https://luminafestival.netlify.app"
   }
 ];
 
