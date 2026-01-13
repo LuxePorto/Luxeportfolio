@@ -251,7 +251,7 @@ const Hero: React.FC<{ reveal: (el: HTMLElement | null) => void; onNavigate: (id
         <div className="max-w-5xl">
           <div className="reveal inline-flex items-center space-x-3 px-5 py-2.5 rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-100/50 dark:bg-white/5 backdrop-blur-xl text-[10px] sm:text-sm font-bold mb-10 sm:mb-12 shadow-sm text-zinc-900 dark:text-white" ref={reveal}>
             <span className="flex h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="tracking-widest uppercase opacity-80">Opening for Q4 2024 Partnerships</span>
+            <span className="tracking-widest uppercase opacity-80">Opening for Q1 2026 Partnerships</span>
           </div>
           
           <h1 className="reveal text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter mb-8 sm:mb-10 leading-[0.9] text-zinc-900 dark:text-white" ref={reveal}>
@@ -465,12 +465,41 @@ const Projects: React.FC<{ reveal: (el: HTMLElement | null) => void; onProjectCl
   }, [filter]);
 
   // Random Repository Data for Depth
-  const archiveItems = [
-    { name: "nebula-core", stars: 124, forks: 45, tech: "Rust", version: "v0.8.2" },
-    { name: "react-industrial-ui", stars: 892, forks: 120, tech: "TypeScript", version: "v2.1.0" },
-    { name: "vector-flow-ai", stars: 456, forks: 82, tech: "Python", version: "v1.4.5" },
-    { name: "luxe-tokens", stars: 213, forks: 28, tech: "DesignOps", version: "v0.9.1" }
-  ];
+const archiveItems = [
+  {
+    name: "website-builder-saas",
+    stars: 0,
+    forks: 0,
+    tech: "TypeScript",
+    version: "main",
+    url: "https://github.com/Junaid12337012/website-builder-saas"
+  },
+  {
+    name: "Newsblog",
+    stars: 0,
+    forks: 0,
+    tech: "JavaScript",
+    version: "main",
+    url: "https://github.com/Junaid12337012/Newsblog"
+  },
+  {
+    name: "own-write",
+    stars: 0,
+    forks: 0,
+    tech: "TypeScript",
+    version: "main",
+    url: "https://github.com/Junaid12337012/own-writes-frontend"
+  },
+  {
+    name: "IRONFORGE",
+    stars: 1,
+    forks: 2,
+    tech: "Node.js",
+    version: "main",
+    url: "https://github.com/Junaid12337012/IRONFORGE"
+  }
+];
+
 
   return (
     <section id="projects" className="py-24 sm:py-48 bg-white dark:bg-[#030303] relative transition-colors duration-500 overflow-hidden">
@@ -545,11 +574,20 @@ const Projects: React.FC<{ reveal: (el: HTMLElement | null) => void; onProjectCl
            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {archiveItems.map((repo, i) => (
                 <div 
-                  key={i} 
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`View repository ${repo.name}`}
-                  className="group p-8 sm:p-10 rounded-3xl sm:rounded-[2.5rem] bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-white/5 hover:border-neon-cyan/50 transition-all duration-700 shadow-sm relative overflow-hidden outline-none focus-visible:ring-4 focus-visible:ring-neon-cyan"
+                   key={i}
+                   role="button"
+                   tabIndex={0}
+                   aria-label={`Open GitHub repository ${repo.name}`}
+                   onClick={() => window.open(repo.url, "_blank")}
+                   onKeyDown={(e) => e.key === "Enter" && window.open(repo.url, "_blank")}
+                   className="group p-8 sm:p-10 rounded-3xl sm:rounded-[2.5rem]
+                   bg-zinc-50 dark:bg-zinc-900/50
+                   border border-zinc-200 dark:border-white/5
+                   hover:border-neon-cyan/50
+                   transition-all duration-700
+                   shadow-sm relative overflow-hidden
+                   cursor-pointer
+                   outline-none focus-visible:ring-4 focus-visible:ring-neon-cyan"
                 >
                    <div className="absolute top-0 right-0 w-32 h-32 bg-neon-cyan/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
                    
@@ -798,7 +836,7 @@ const Blog: React.FC<{ reveal: (el: HTMLElement | null) => void; onReadPost: (po
             ref={reveal}
           >
             <div className="aspect-[4/3] rounded-3xl sm:rounded-[2.5rem] overflow-hidden mb-6 sm:mb-8 bg-zinc-100 dark:bg-zinc-900 shadow-xl relative">
-               <img src={`https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop&sig=${idx}`} alt={post.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+               <img src={post.author.avatar} alt={post.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                <div className="absolute top-4 sm:top-6 left-4 sm:left-6 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-full text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-zinc-900 dark:text-white border border-zinc-200 dark:border-white/10">
                  {post.category}
                </div>
